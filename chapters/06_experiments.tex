@@ -1,0 +1,157 @@
+\chapter{Implementation of Virtual Physics Experiments}
+
+\section{Stern--Gerlach Experiment}
+
+The Stern--Gerlach experiment is one of the most significant experiments in modern physics, providing experimental evidence for the quantization of angular momentum and the existence of intrinsic particle spin. Originally conducted by Otto Stern and Walther Gerlach in 1922, the experiment demonstrated that a beam of silver atoms passing through a non-uniform magnetic field splits into discrete components rather than forming a continuous distribution. This observation challenged classical physics and became a cornerstone in the development of quantum mechanics \cite{gerlach1922experiment,griffiths2018quantum}.
+
+Within the proposed virtual laboratory, the Stern--Gerlach experiment was implemented to provide students with an interactive visualization of this fundamental quantum phenomenon. Instead of observing static textbook illustrations, users are able to explore the experimental apparatus in a three-dimensional environment, examine its individual components, and observe the behavior of the atomic beam as it passes through the magnetic field. The virtual implementation allows learners to relate the theoretical concepts of quantum mechanics to the corresponding experimental setup.
+
+The experiment was designed to emphasize conceptual understanding rather than numerical simulation. The virtual environment reproduces the principal components of the original experimental arrangement, including the atom source, collimation system, inhomogeneous magnetic field, and detection screen. Through interactive visualization, students can observe how the magnetic field influences the trajectory of the silver atoms and produces the characteristic beam separation.
+
+The following sections describe the physical principles underlying the Stern--Gerlach experiment, the design of the virtual experimental setup, and the implementation of the interactive simulation within the browser-based virtual laboratory.
+
+\subsection{Virtual Experimental Setup}
+
+The virtual implementation of the Stern--Gerlach experiment was designed to reproduce the essential components of the original experimental apparatus while providing an interactive learning experience within the browser-based virtual laboratory. Rather than replicating every physical detail of the historical experiment, the implementation focuses on the key elements required to demonstrate the phenomenon of spin quantization in an intuitive and visually accessible manner.
+
+The experimental setup consists of four principal components: an atom source, a collimation system, an inhomogeneous magnetic field, and a detection screen. These components are arranged sequentially to closely resemble the structure of the original Stern--Gerlach experiment. The atom source emits a beam of silver atoms that travels through the apparatus toward the detector. Before entering the magnetic field, the beam passes through a collimation stage that narrows the particle distribution and produces a well-defined atomic beam.
+
+The central component of the experiment is the inhomogeneous magnetic field, represented by a pair of asymmetrically shaped magnetic poles. This region illustrates the interaction between the magnetic moment of the silver atoms and the magnetic field gradient. As the atoms traverse the magnetic field, the beam separates into two distinct trajectories corresponding to the two possible spin orientations. The resulting beam separation is displayed on the detection screen, allowing users to observe the characteristic outcome of the Stern--Gerlach experiment.
+
+To improve understanding of the experimental process, the virtual environment provides a clear three-dimensional representation of each apparatus component. Users can freely move around the experimental setup, observe the apparatus from different viewpoints, and examine the relationship between the individual components. This spatial visualization enables learners to better understand the sequence of events occurring during the experiment compared with conventional two-dimensional textbook illustrations.
+
+The virtual experiment is integrated into the collaborative virtual laboratory environment, allowing multiple participants to observe the experiment simultaneously. Users within the same laboratory session share a common view of the experimental setup, enabling collaborative discussions and instructor-guided demonstrations. This shared environment extends the traditional laboratory experience by combining immersive visualization with real-time collaborative learning.
+
+The implementation of the virtual experimental setup serves as the foundation for the interactive visualization presented in the following implementation section, where the simulation behavior and user interaction mechanisms are described in greater detail.
+
+\subsection{User Interaction}
+
+The Stern--Gerlach experiment was designed to provide an interactive learning experience that allows users to actively explore the experimental apparatus rather than passively observing a predefined simulation. The interaction model enables users to examine the experimental setup from different viewpoints, observe the arrangement of the apparatus, and gain a better understanding of the relationship between its individual components.
+
+Users can freely navigate around the experiment using either desktop controls or immersive Virtual Reality (VR) controllers. This freedom of movement allows the experimental apparatus to be viewed from multiple perspectives, enabling learners to closely inspect the atom source, magnetic field region, and detection screen. Such spatial exploration provides a clearer understanding of the experimental arrangement than conventional two-dimensional illustrations.
+
+The experiment is integrated into the shared virtual laboratory environment, allowing multiple users to observe the same experimental setup simultaneously. Each participant is represented by an avatar, enabling collaborative discussions and instructor-guided demonstrations within the virtual space. Because all users occupy the same virtual laboratory session, the experiment can be experienced collectively, closely resembling group activities in a traditional laboratory.
+
+Interactive elements within the experiment provide visual feedback to guide users throughout the learning process. The beam trajectory, magnetic field region, and resulting particle separation are clearly visualized, allowing learners to observe the sequence of events as the atoms pass through the experimental apparatus. This visualization assists users in relating the physical arrangement of the equipment to the underlying quantum mechanical concepts.
+
+The interaction model was intentionally designed to remain intuitive and unobtrusive, allowing students to focus on understanding the physical principles demonstrated by the experiment rather than learning complex control mechanisms. By combining immersive visualization, free navigation, and collaborative observation, the virtual implementation provides an engaging educational environment for exploring one of the fundamental experiments in quantum physics.
+
+\subsection{Implementation}
+
+The Stern--Gerlach experiment was implemented as an interactive three-dimensional scene within the browser-based virtual laboratory using Babylon.js. The implementation focuses on providing a clear visualization of the experimental apparatus and the resulting beam separation while maintaining compatibility with both desktop browsers and immersive Virtual Reality (VR) devices. The experiment is integrated into the overall virtual laboratory framework and shares the same rendering, interaction, and multiplayer infrastructure as the other educational modules developed in this thesis.
+
+The virtual apparatus consists of individually modeled components representing the atom source, collimator, magnetic field assembly, and detection screen. These components are positioned according to the logical sequence of the original experiment, enabling users to follow the path of the atomic beam through the experimental setup. Appropriate materials, lighting, and textures were applied to improve the visual realism of the environment while maintaining real-time rendering performance.
+
+The beam of silver atoms is represented using animated visual elements that travel from the atom source toward the detector. Upon entering the magnetic field region, the beam separates into two distinct trajectories corresponding to the two possible spin orientations. This visualization illustrates the principle of spin quantization without requiring users to understand the underlying mathematical formulation of quantum mechanics.
+
+The implementation was designed to operate within the collaborative virtual laboratory environment. Multiple users can simultaneously observe the experiment, explore the apparatus from different viewpoints, and discuss the observed phenomena while remaining synchronized within the same virtual session. Since the experiment shares the common networking infrastructure of the laboratory, all participants observe an identical visualization of the experimental setup.
+
+The modular implementation also allows future extensions of the experiment. Additional educational features, such as interactive parameter adjustment, explanatory annotations, guided learning modes, or more advanced quantum mechanical visualizations, can be incorporated without requiring significant modifications to the existing application framework.
+
+The complete implementation of the Stern--Gerlach experiment, together with the supporting assets and application logic, is included in the accompanying source code repository \cite{thesisRepo}.
+
+\section{Convex Lens Experiment}
+
+The Convex Lens experiment was developed to demonstrate the fundamental principles of geometric optics through an interactive and immersive learning experience. Unlike the Stern--Gerlach experiment, which primarily focuses on conceptual visualization, the Convex Lens experiment enables users to actively manipulate experimental components and immediately observe the resulting changes in image formation. This interactive approach encourages learners to explore the relationship between object distance, image distance, focal length, and magnification by directly engaging with the virtual apparatus.
+
+The experiment reproduces the essential components of a conventional optics laboratory, including a light source, an object, a convex lens, and a projection screen. These components are arranged along a common optical axis, allowing students to investigate how light rays converge after passing through the lens and how images are formed at different object and lens positions. The virtual implementation closely resembles a real laboratory experiment while eliminating the physical limitations associated with traditional laboratory equipment.
+
+Within the virtual laboratory, users can reposition the convex lens and projection screen while also adjusting the focal length of the lens through an interactive control interface. Every modification immediately updates the experimental configuration, allowing students to observe the effect of changing optical parameters in real time. This immediate visual feedback provides a more intuitive understanding of geometric optics than static diagrams or numerical calculations alone.
+
+The experiment incorporates the thin lens equation to determine the theoretical image position and continuously compares it with the current screen position selected by the user. As a result, students can identify the conditions required to obtain a sharply focused image while simultaneously observing how incorrect positioning leads to image blur. The combination of mathematical computation and visual feedback reinforces the relationship between theoretical equations and experimental observations.
+
+The Convex Lens experiment is fully integrated into the collaborative virtual laboratory environment. Multiple participants can observe the same experimental setup, monitor parameter changes, and discuss the resulting image formation during collaborative laboratory sessions. Since all interactions are synchronized through the multiplayer framework, every connected participant experiences an identical representation of the experiment.
+
+The following sections describe the physical principles underlying the experiment, the design of the virtual experimental setup, and the implementation of the interactive optics simulation within the browser-based virtual laboratory.
+
+\subsection{Physical Background}
+
+The Convex Lens experiment demonstrates one of the fundamental principles of geometric optics: the formation of real and virtual images through a converging lens. Convex lenses are widely used in optical instruments such as cameras, microscopes, telescopes, and the human eye, making them an important topic in physics education. Understanding the relationship between object position, focal length, and image formation enables students to develop an intuitive understanding of light propagation and optical systems.
+
+The experiment is based on the thin lens approximation, in which the thickness of the lens is considered negligible compared with its focal length. Under this assumption, the relationship between the object distance ($d_o$), image distance ($d_i$), and focal length ($f$) is described by the thin lens equation
+
+\[
+\frac{1}{f}=\frac{1}{d_o}+\frac{1}{d_i}.
+\]
+
+
+::contentReference[oaicite:0]{index=0}
+
+
+The position of the image depends on both the focal length of the lens and the distance between the object and the lens. When the projection screen is placed at the calculated image position, a sharp image is formed. If the screen is positioned in front of or behind the calculated location, the image appears blurred because the light rays have not yet converged or have already diverged after passing through the focal point.
+
+Another important characteristic of a convex lens is image magnification, which describes the relative size of the image compared with the object. Magnification depends on the ratio between the image distance and the object distance and determines whether the image appears enlarged or reduced. As the object or lens position changes, both the image location and magnification vary continuously, allowing students to observe the relationship between the mathematical model and the resulting optical behavior.
+
+The virtual experiment implemented in this thesis reproduces these fundamental principles by allowing users to interactively modify the optical configuration and immediately observe the corresponding changes in image formation. This combination of mathematical modeling and real-time visualization provides an intuitive understanding of geometric optics while supporting active learning within the virtual laboratory environment \cite{hecht2017optics}.
+
+\subsection{Virtual Experimental Setup}
+
+The virtual Convex Lens experiment was designed to replicate the essential components of a conventional optics laboratory while providing an interactive and immersive learning experience. The implementation reproduces the experimental arrangement commonly used in physics laboratories, allowing students to investigate image formation through direct manipulation of the optical components. The virtual setup combines realistic visualization with real-time mathematical calculations, enabling learners to observe the relationship between theoretical optics and experimental behavior.
+
+The experimental apparatus consists of four principal components arranged along a common optical axis: a light source, an object slide displaying the letter "F", a movable convex lens, and a movable projection screen. The light source provides illumination for the object, while the convex lens refracts the transmitted light rays to produce an image on the projection screen. The object slide remains fixed throughout the experiment, whereas both the lens and the projection screen can be repositioned by the user to investigate different optical configurations.
+
+To increase the educational value of the experiment, an interactive control panel is positioned within the virtual environment. The control panel allows users to modify the focal length of the convex lens during runtime using a slider interface. As the focal length changes, the theoretical image position is recalculated immediately, allowing students to observe the effect of lens properties on image formation without restarting the experiment or manually reconfiguring the apparatus.
+
+The virtual laboratory provides a three-dimensional representation of the complete experimental setup, enabling users to freely explore the apparatus from different viewpoints. Desktop users navigate the environment using keyboard and mouse controls, whereas VR users interact naturally using handheld motion controllers. This immersive visualization allows students to inspect the spatial relationship between the object, lens, and projection screen more effectively than traditional two-dimensional laboratory diagrams.
+
+The experimental setup was designed to support both individual exploration and collaborative learning. Since the experiment operates within the shared virtual laboratory environment, multiple participants can simultaneously observe the apparatus, discuss experimental observations, and follow parameter adjustments performed by other users. This collaborative capability closely resembles practical laboratory sessions conducted in educational institutions while providing the flexibility of remote participation.
+
+The virtual implementation forms the foundation for the interactive optics experiment described in the following sections, where the manipulation of optical components, real-time image formation, and implementation of the thin lens equation are presented in detail. The complete implementation of the experimental setup is available in the accompanying project repository \cite{thesisRepo}.
+
+\subsection{Interactive Lens and Screen Positioning}
+
+A primary objective of the Convex Lens experiment is to enable students to actively investigate image formation by manipulating the optical components of the experimental setup. Unlike traditional laboratory demonstrations, where the apparatus is often adjusted only by the instructor, the virtual implementation allows users to directly reposition the convex lens and the projection screen within the three-dimensional environment. This interactive approach encourages exploration and enables learners to observe the relationship between component positioning and image formation in real time.
+
+The convex lens and the projection screen are implemented as movable objects constrained to the optical axis of the experiment. This restriction preserves the correct alignment of the optical system while preventing unrealistic movements that would invalidate the experimental configuration. Users can select either component and reposition it along the horizontal axis using desktop controls or VR controllers, closely resembling the operation of a physical optics bench.
+
+Whenever the lens position is modified, the object distance and image distance are recalculated based on the current experimental configuration. Similarly, moving the projection screen changes the actual image plane, allowing users to compare the theoretical image position with the current screen location. These updates are performed continuously during interaction, providing immediate visual feedback without interrupting the experiment.
+
+The interaction mechanism enables students to investigate how different configurations influence image formation. By moving the convex lens closer to or farther from the object, users can observe corresponding changes in image position and magnification. Likewise, adjusting the projection screen allows learners to determine the location at which a sharply focused image is produced. This trial-and-error exploration reinforces the relationship between the theoretical thin lens equation and the practical behavior of the optical system.
+
+To provide a realistic laboratory experience, all movements are performed smoothly within the virtual environment while maintaining synchronization with the multiplayer framework. When one participant adjusts the lens or projection screen, the updated positions are transmitted to the server and synchronized with all connected users. Consequently, every participant observes the same experimental configuration, supporting collaborative experimentation and instructor-guided demonstrations.
+
+The implementation of interactive lens and screen positioning forms one of the key educational features of the proposed virtual laboratory. By combining direct manipulation with real-time optical calculations and collaborative synchronization, the experiment enables students to actively explore image formation in an immersive and interactive learning environment. The implementation of these interaction mechanisms is available in the accompanying project repository \cite{thesisRepo}.
+
+\subsection{Variable Focal Length}
+
+One of the distinguishing features of the virtual Convex Lens experiment is the ability to modify the focal length of the lens interactively during runtime. In conventional laboratory experiments, changing the focal length typically requires replacing the physical lens with another lens of different optical properties. In contrast, the virtual implementation allows users to adjust the focal length continuously using an interactive control panel, enabling rapid exploration of different optical configurations within a single experiment.
+
+The focal length is controlled through a slider positioned within the virtual laboratory. As the slider is adjusted, the focal length parameter is updated immediately, and the optical characteristics of the virtual lens are recalculated in real time. This allows students to investigate how different focal lengths influence image formation without interrupting the experimental workflow or modifying the physical setup.
+
+Changing the focal length directly affects the position at which the image is formed. For shorter focal lengths, the image is produced closer to the lens, whereas larger focal lengths shift the image plane farther away. The virtual experiment updates the theoretical image position immediately after each focal length adjustment, allowing users to observe the corresponding changes in image formation while repositioning the projection screen to obtain a sharp image.
+
+The interactive focal-length adjustment encourages students to explore the relationship between lens properties and optical behavior through experimentation rather than memorization. By continuously varying the focal length and observing the resulting changes in image position and magnification, learners gain a more intuitive understanding of the role of focal length in geometric optics.
+
+The implementation was designed to operate seamlessly with the remaining components of the experiment. Changes to the focal length automatically trigger recalculation of the thin lens equation, update the predicted image position, and modify the visual feedback presented to the user. Since the experiment is integrated within the collaborative virtual laboratory, focal-length adjustments are synchronized across all connected participants, ensuring that every user observes the same experimental configuration throughout the laboratory session.
+
+The implementation of the variable focal-length mechanism demonstrates one of the key advantages of virtual laboratories over traditional physical experiments. By allowing optical parameters to be modified dynamically while maintaining real-time visualization and multiplayer synchronization, the virtual environment provides students with greater flexibility for exploring the principles of geometric optics. The corresponding implementation is included in the accompanying project repository \cite{thesisRepo}.
+
+\subsection{Image Formation and Focus Calculation}
+
+The image formation mechanism constitutes the core functionality of the virtual Convex Lens experiment. Unlike a purely visual demonstration, the proposed implementation continuously performs optical calculations during user interaction, enabling the virtual experiment to respond dynamically to changes in the experimental configuration. Every movement of the convex lens, projection screen, or focal-length slider immediately updates the calculated image position and corresponding visual feedback presented to the user.
+
+The implementation is based on the thin lens equation, which establishes the relationship between the object distance, image distance, and focal length of the convex lens. During each update of the experiment, the current object distance is determined from the relative positions of the object and the lens, while the selected focal length is obtained from the interactive control panel. These parameters are used to calculate the theoretical image position within the virtual optical system.
+
+The calculated image position is continuously compared with the current position of the projection screen. When the screen coincides with the theoretical image plane, the projected image appears sharp and well focused. As the screen moves away from this position, the focus error increases and the projected image becomes progressively blurred. This continuous comparison enables users to visually identify the correct image position while simultaneously observing the relationship between the mathematical model and the experimental result.
+
+In addition to determining image position, the implementation also calculates image magnification based on the current optical configuration. Variations in object distance or focal length therefore influence not only the location of the image but also its size. These changes are reflected immediately within the virtual environment, allowing students to observe how optical parameters affect image formation in real time.
+
+The continuous update mechanism enables immediate visual feedback throughout the experiment. Every interaction performed by the user triggers a recalculation of the optical model, ensuring that image formation remains synchronized with the current experimental configuration. This real-time behaviour encourages active exploration by allowing students to investigate different parameter combinations without interrupting the experiment.
+
+By combining mathematical computation with immersive visualization, the virtual experiment establishes a direct connection between theoretical optics and practical experimentation. Students can immediately observe the consequences of modifying optical parameters, reinforcing their understanding of image formation through interactive exploration rather than passive observation. The implementation of the image formation and focus calculation algorithm is included in the accompanying project repository \cite{thesisRepo}.
+
+\subsection{Implementation}
+
+The Convex Lens experiment was implemented as an interactive module within the browser-based virtual laboratory using Babylon.js. The implementation combines three-dimensional visualization, real-time optical calculations, and user interaction to provide an immersive educational experience. The experiment operates entirely within the client application while integrating seamlessly with the multiplayer framework and the overall laboratory environment.
+
+The experimental apparatus was developed using modular software components, where each optical element, including the light source, object slide, convex lens, projection screen, and control panel, is represented as an independent entity within the virtual scene. This modular organization simplifies maintenance and allows individual components to be modified or extended without affecting the remaining parts of the experiment.
+
+The interaction system continuously monitors user input and updates the experimental configuration in real time. Whenever the user repositions the convex lens, adjusts the projection screen, or changes the focal length, the corresponding optical parameters are recalculated immediately. The application then updates the predicted image position, magnification, and focus state while simultaneously refreshing the visual representation displayed within the virtual environment.
+
+The implementation was designed to provide immediate visual feedback throughout the experiment. A sharp image is displayed whenever the projection screen coincides with the calculated image plane, whereas increasing deviation from the theoretical position produces a progressively blurred image. This continuous feedback enables users to directly associate their interactions with the resulting optical behaviour, reinforcing the relationship between theoretical calculations and experimental observations.
+
+To support collaborative learning, the experiment is integrated with the multiplayer architecture described in Chapter~4. User interactions affecting shared experimental components are synchronized across all connected participants, ensuring that every user observes an identical experimental configuration. This synchronization enables collaborative experimentation, instructor demonstrations, and group discussions within the shared virtual laboratory.
+
+The modular software architecture adopted during implementation also facilitates future extensions of the experiment. Additional optical components, measurement instruments, experimental scenarios, or educational features can be incorporated without requiring substantial modifications to the existing implementation. Consequently, the Convex Lens experiment serves not only as an educational application but also as a reusable framework for the development of future virtual optics experiments.
+
+The complete implementation of the Convex Lens experiment, including the application logic, interaction mechanisms, and supporting assets, is available in the accompanying project repository \cite{thesisRepo}.

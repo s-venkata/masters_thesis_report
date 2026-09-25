@@ -1,0 +1,69 @@
+\chapter{Future Work}
+
+\section{Additional Physics Experiments}
+
+The current implementation demonstrates the feasibility of the proposed virtual laboratory through the development of the Stern--Gerlach and Convex Lens experiments. While these experiments validate the underlying architecture and interaction framework, the modular design of the system allows additional experiments to be incorporated with relatively limited modifications to the existing software architecture.
+
+Future work may include the implementation of a broader range of experiments covering optics, classical physics, and quantum physics. Potential optics experiments include the Double-Slit Experiment, Michelson Interferometer, Polarization (Malus' Law), Diffraction Grating, and Optical Fiber Communication. Similarly, additional quantum physics demonstrations such as the Photoelectric Effect, Quantum Tunneling, Radioactive Decay, and Wave--Particle Duality could further expand the educational value of the platform.
+
+The browser-based architecture enables newly developed experiments to be integrated as independent modules without requiring significant changes to the rendering engine, networking infrastructure, or user interaction framework. This modularity simplifies future development while allowing instructors to customize the virtual laboratory according to specific course requirements.
+
+Future experiments may also incorporate richer visualization techniques, real-time measurement displays, parameter adjustment interfaces, and guided experimental procedures. Such enhancements would allow students not only to observe physical phenomena but also to investigate the influence of different experimental parameters through interactive exploration.
+
+By continuously extending the available experiment library, the proposed virtual laboratory could evolve into a comprehensive browser-based platform supporting a wide range of undergraduate physics courses while maintaining the advantages of immersive Virtual Reality and collaborative learning.
+
+\section{Improved Multiplayer Interaction}
+
+The current implementation enables multiple users to participate simultaneously within the same virtual laboratory, allowing them to navigate the environment, observe each other's avatars, and collaboratively interact with shared experimental objects. While this functionality demonstrates the feasibility of real-time collaborative learning, several enhancements could further improve the overall user experience.
+
+One important area for future work is the introduction of dedicated user roles. For example, an instructor role could be provided with additional privileges such as controlling the progression of experiments, resetting laboratory equipment, highlighting important objects, or guiding students through structured learning activities. Similarly, student roles could support collaborative group experiments where participants perform different tasks to achieve a common objective.
+
+The current implementation synchronizes shared objects and user positions in real time. Future versions could extend this functionality by supporting collaborative annotations, shared virtual whiteboards, synchronized measurement panels, and experiment-specific collaboration tools. These features would encourage communication and teamwork while enabling instructors to provide more interactive learning experiences.
+
+Session management could also be enhanced by supporting persistent laboratory sessions, allowing users to leave and rejoin ongoing experiments without losing experimental progress. Additional features such as user authentication, laboratory scheduling, session recording, and collaborative experiment replay could further improve the platform's suitability for classroom deployment.
+
+As the number of simultaneous users increases, more advanced networking techniques may become necessary. Future work could investigate adaptive synchronization strategies, interest management, state interpolation, and distributed server architectures to improve scalability while maintaining low latency and a consistent shared environment.
+
+These enhancements would transform the current prototype into a more comprehensive collaborative learning platform capable of supporting larger classes, instructor-led demonstrations, and more complex multi-user scientific experiments.
+
+\section{Improved Visual Realism}
+
+Although the developed virtual laboratory provides an immersive and interactive learning environment, further improvements in visual realism could enhance both user experience and educational effectiveness. Future work may focus on increasing the realism of the virtual environment while maintaining the real-time performance required for browser-based Virtual Reality applications.
+
+One promising direction is the integration of more accurate three-dimensional reconstructions of real laboratory environments. Advances in neural rendering techniques, such as Gaussian Splatting and related scene reconstruction methods, have demonstrated significant potential for producing highly photorealistic virtual environments. Incorporating these techniques into educational virtual laboratories could provide students with environments that more closely resemble real-world laboratories while preserving interactive functionality.
+
+Additional visual improvements could include higher-quality materials and textures, physically based rendering (PBR), dynamic lighting, improved shadow generation, and more realistic reflections. Enhanced visual effects such as volumetric lighting, particle systems, and improved environmental audio could further increase the sense of presence and immersion experienced by users.
+
+Future versions of the virtual laboratory may also support animated laboratory equipment and more detailed scientific instruments. Interactive visualizations, such as real-time ray tracing for optical experiments or dynamic particle trajectories for quantum physics demonstrations, could provide students with a more intuitive understanding of complex physical phenomena.
+
+At the same time, visual enhancements must be carefully balanced against computational performance, particularly for standalone VR devices such as the Meta Quest~3. Therefore, future research should investigate rendering optimization techniques that maintain high visual fidelity while ensuring smooth and responsive interaction within browser-based Virtual Reality environments.
+
+By combining advances in real-time rendering, three-dimensional scene reconstruction, and immersive visualization, future versions of the proposed virtual laboratory could provide an even more realistic and engaging educational experience while preserving the accessibility and flexibility offered by modern web technologies.
+
+\section{Performance Optimization}
+
+The current implementation has been optimized to provide a smooth user experience on both desktop computers and standalone Virtual Reality headsets. Nevertheless, supporting larger virtual environments, more complex experiments, and a greater number of concurrent users will require additional optimization techniques to maintain high rendering performance and low interaction latency.
+
+Future work could focus on improving rendering efficiency through techniques such as adaptive level-of-detail (LOD) rendering, geometry simplification, texture streaming, frustum culling, and occlusion culling. These methods would reduce the computational workload by ensuring that only visible or relevant scene elements are processed during rendering.
+
+The browser-based architecture could also benefit from more advanced asset management strategies. Dynamic loading and unloading of models, textures, and experimental components based on the user's location within the virtual laboratory would reduce memory consumption and improve loading times. Such techniques would be particularly beneficial as additional laboratory rooms and experiments are incorporated into the platform.
+
+From the networking perspective, future optimization could include adaptive synchronization frequencies, client-side interpolation, state prediction, and interest management to reduce bandwidth usage while maintaining smooth multi-user interaction. These approaches would improve scalability and allow the system to support larger collaborative laboratory sessions without compromising responsiveness.
+
+As WebXR technology and browser rendering engines continue to evolve, future versions of the virtual laboratory are also expected to benefit from improvements in graphics APIs, browser performance, and hardware acceleration. Exploiting these advances could further enhance visual quality while maintaining the high frame rates required for comfortable immersive Virtual Reality experiences.
+
+Overall, continued optimization of rendering, networking, and resource management will improve the scalability, responsiveness, and accessibility of the proposed virtual laboratory, enabling the platform to support increasingly sophisticated educational content and larger numbers of simultaneous users.
+
+\section{Learning Analytics and Assessment}
+
+The current implementation primarily focuses on providing an immersive and interactive learning environment for physics education. Future development could extend the platform by incorporating learning analytics and assessment capabilities that enable instructors to monitor student progress and evaluate learning outcomes more effectively.
+
+One potential enhancement is the automatic recording of user interactions during laboratory sessions. Information such as completed experiments, interaction sequences, task completion time, parameter adjustments, and collaboration patterns could be collected and analyzed to provide insights into student engagement and learning behaviour. Such data would allow instructors to identify common misconceptions and provide targeted feedback.
+
+The virtual laboratory could also incorporate integrated assessment mechanisms. For example, students may be guided through structured experimental procedures with predefined learning objectives, after which the system could automatically evaluate the correctness of experimental configurations, recorded measurements, and obtained results. Immediate feedback could then be presented to support self-directed learning.
+
+Future versions of the platform may also include personalized learning features. Based on previous performance and interaction history, the system could recommend appropriate experiments, adjust the level of difficulty, or provide additional instructional material tailored to individual learners. Such adaptive learning approaches could improve student engagement while accommodating different levels of prior knowledge.
+
+Furthermore, learning analytics could be integrated with institutional Learning Management Systems (LMS) to simplify course administration and progress tracking. Standardized interfaces would allow instructors to monitor participation, review assessment results, and incorporate virtual laboratory activities into existing educational workflows.
+
+By combining immersive Virtual Reality with intelligent learning analytics and automated assessment, future versions of the proposed virtual laboratory could evolve beyond an interactive simulation platform into a comprehensive digital learning environment that supports both students and instructors throughout the educational process.

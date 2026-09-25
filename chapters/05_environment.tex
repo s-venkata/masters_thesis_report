@@ -1,0 +1,248 @@
+\chapter{Development of the Virtual Laboratory}
+
+\section{Development Environment and Technologies}
+
+The virtual laboratory was developed using a collection of modern web technologies and software development tools that support browser-based Virtual Reality (VR), real-time collaboration, and cross-platform deployment. The selected technologies were chosen to provide high rendering performance, modular software development, efficient multiplayer communication, and compatibility with WebXR-enabled devices.
+
+Table~\ref{tab:development_technologies} summarizes the principal technologies used during the development of the proposed virtual laboratory.
+
+\begin{table}[H]
+\centering
+\caption{Development environment and technologies}
+\label{tab:development_technologies}
+
+\renewcommand{\arraystretch}{1.3}
+
+\begin{tabular}{p{4cm}p{4cm}p{7cm}}
+\hline
+\textbf{Category} & \textbf{Technology} & \textbf{Purpose} \\
+\hline
+
+Programming Language &
+JavaScript &
+Client-side application development and interactive functionality. \\
+
+3D Graphics Engine &
+Babylon.js &
+Rendering of the virtual environment, scene management, lighting, materials, animations, and WebXR integration. \\
+
+Virtual Reality &
+WebXR Device API &
+Provides immersive VR support and interaction through compatible web browsers and VR headsets. \\
+
+Backend Runtime &
+Node.js &
+Executes the backend server and manages multiplayer services. \\
+
+Multiplayer Framework &
+Colyseus &
+Manages multiplayer rooms, state synchronization, and real-time communication between connected users. \\
+
+Communication Protocol &
+WebSocket &
+Provides persistent bidirectional communication between clients and the server. \\
+
+Development Environment &
+Visual Studio Code &
+Source code development, debugging, and project management. \\
+
+Version Control &
+Git &
+Source code version management and collaborative development. \\
+
+Repository Hosting &
+GitHub &
+Source code hosting and project version tracking \cite{thesisRepo}. \\
+
+Deployment &
+Docker, Docker Compose &
+Containerized deployment of the application and backend services. \\
+
+Reverse Proxy &
+Caddy &
+HTTPS support and routing of frontend and backend services. \\
+
+Target Platform &
+Meta Quest 3, Desktop Browsers &
+Execution of the virtual laboratory in immersive VR and desktop modes. \\
+
+\hline
+\end{tabular}
+
+\end{table}
+
+The implementation follows a browser-based client--server architecture in which the frontend is responsible for rendering the virtual environment and handling user interaction, while the backend manages multiplayer sessions and synchronizes shared virtual objects. The use of modern web technologies allows the application to operate across multiple platforms without requiring dedicated native software installation.
+
+The complete implementation developed as part of this thesis is maintained in a public GitHub repository, enabling reproducibility, future development, and long-term maintenance of the virtual laboratory platform \cite{thesisRepo}. The repository contains the frontend application, backend server, deployment configuration, project documentation, and implementation of the interactive physics experiments.
+
+\section{Virtual Laboratory Layout}
+
+The virtual laboratory was designed to provide a structured and intuitive learning environment that supports both theoretical instruction and practical experimentation. Rather than representing a single laboratory room, the environment is organized into multiple interconnected spaces, each serving a specific educational purpose. This organization allows users to move naturally between different learning activities while maintaining a coherent virtual experience. Figure~\ref{fig:lab_layout} illustrates the overall layout of the virtual laboratory.
+
+A central corridor serves as the primary navigation area of the environment. From this corridor, users can access the individual rooms of the laboratory without requiring additional loading screens or scene transitions. This design provides a clear spatial organization and allows users to easily understand the relationship between different functional areas of the virtual laboratory.
+
+The classroom functions as the theoretical learning space where introductory concepts, instructions, and demonstrations can be presented before students begin practical experiments. This separation between theoretical instruction and experimental activities reflects the workflow commonly followed in traditional laboratory courses, where concepts are introduced before practical implementation.
+
+The laboratory room forms the core educational area of the virtual environment. Interactive physics experiments and virtual laboratory equipment are located within this room, allowing users to manipulate experimental components and observe the resulting physical phenomena. The open layout provides sufficient space for multiple users to collaborate simultaneously while maintaining clear visibility of the experimental setup.
+
+The virtual environment also includes a data center room, which demonstrates the extensibility of the proposed virtual laboratory. Although it is not directly associated with the physics experiments presented in this thesis, it illustrates how additional educational spaces can be integrated into the same virtual environment. The modular design allows future laboratory rooms and educational scenarios to be incorporated without altering the overall layout of the virtual laboratory.
+
+The layout was intentionally designed to support collaborative learning. Multiple users can occupy the same environment, navigate independently between rooms, and participate in shared laboratory activities. The spatial separation of different functional areas also reduces visual clutter and provides a logical organization that improves orientation within the virtual environment.
+
+The modular organization of the virtual laboratory facilitates future expansion. Additional classrooms, laboratories, or experimental environments can be integrated by extending the existing layout while preserving the overall navigation concept. Consequently, the virtual laboratory serves not only as a platform for the experiments implemented in this thesis but also as a foundation for future educational applications and collaborative learning scenarios.
+
+The implementation of the virtual laboratory layout and its associated assets is available in the accompanying project repository \cite{thesisRepo}.
+
+
+\section{User Navigation and Interaction}
+
+An intuitive navigation and interaction mechanism is essential for providing an effective learning experience within an immersive virtual environment. The proposed virtual laboratory was designed to support both desktop users and Virtual Reality (VR) users, enabling participants to interact with the same environment regardless of the hardware platform used. The interaction model emphasizes simplicity, accessibility, and natural manipulation of virtual objects while maintaining consistency across different input devices. Figure~\ref{fig:user_interaction} illustrates the overall interaction workflow within the virtual laboratory.
+
+Upon launching the application, users enter the virtual laboratory through a standard web browser. Desktop users access the environment using conventional keyboard and mouse controls, whereas users equipped with a compatible VR headset can activate immersive mode through the integrated "Enter VR" functionality provided by the browser. This dual-mode approach enables both desktop and VR participants to join the same collaborative laboratory session.
+
+Navigation within the virtual environment is designed to be straightforward and intuitive. Users are free to move throughout the virtual laboratory, allowing them to transition between the classroom, laboratory, corridor, and other educational spaces. The spatial organization of the environment enables users to naturally explore different learning areas without interruption or scene changes, thereby providing a continuous immersive experience.
+
+Interaction with laboratory equipment follows a direct manipulation paradigm. Interactive objects respond to user input through object selection, grabbing, movement, and release operations. In desktop mode, these interactions are performed using the keyboard and mouse, whereas in immersive mode they are executed using handheld VR controllers. Visual feedback is provided during object manipulation, allowing users to clearly identify interactive components and observe the effects of their actions.
+
+The user interface was intentionally designed to remain simple and unobtrusive in order to preserve immersion. Only essential interface elements, such as entering VR mode and experiment-related controls, are presented to the user. Most interactions occur directly within the three-dimensional environment, allowing learners to focus on the experimental activities rather than navigating complex menus.
+
+The virtual laboratory also supports collaborative interaction by representing every connected participant as an avatar within the shared environment. Users can observe the movements and interactions of other participants in real time, enabling collaborative experimentation, instructor demonstrations, and group discussions. Shared laboratory objects remain synchronized across all connected clients, ensuring that every participant observes a consistent representation of the experiment.
+
+Overall, the navigation and interaction design aims to provide an immersive, intuitive, and collaborative user experience while remaining sufficiently flexible to accommodate future experiments and additional interaction techniques. The implementation of the interaction mechanisms is available in the accompanying project repository \cite{thesisRepo}.
+
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+node distance=1.5cm,
+box/.style={
+draw,
+rounded corners,
+minimum width=4.2cm,
+minimum height=0.9cm,
+align=center,
+fill=gray!10
+},
+arrow/.style={->,thick}
+]
+
+\node[box] (user) {User};
+
+\node[box, below left=1.5cm and 2.3cm of user] (desktop) {Desktop Mode\\Keyboard \& Mouse};
+
+\node[box, below right=1.5cm and 2.3cm of user] (vr) {VR Mode\\WebXR Controllers};
+
+\node[box, below=3cm of user] (navigation) {Navigation};
+
+\node[box, below left=1.5cm and 2.3cm of navigation] (interaction) {Object Interaction};
+
+\node[box, below right=1.5cm and 2.3cm of navigation] (collaboration) {Collaborative Interaction};
+
+\node[box, below=3cm of navigation] (lab) {Virtual Laboratory};
+
+\draw[arrow] (user)--(desktop);
+\draw[arrow] (user)--(vr);
+
+\draw[arrow] (desktop)--(navigation);
+\draw[arrow] (vr)--(navigation);
+
+\draw[arrow] (navigation)--(interaction);
+\draw[arrow] (navigation)--(collaboration);
+
+\draw[arrow] (interaction)--(lab);
+\draw[arrow] (collaboration)--(lab);
+
+\end{tikzpicture}
+
+\caption{User navigation and interaction workflow within the virtual laboratory.}
+\label{fig:user_interaction}
+\end{figure}
+
+\section{VR Controller Interaction}
+
+The proposed virtual laboratory was designed to provide a natural and intuitive interaction experience for users accessing the application through Virtual Reality (VR) headsets. By utilizing the WebXR Device API together with the interaction capabilities provided by Babylon.js, users are able to manipulate virtual laboratory equipment using handheld VR controllers. This interaction model closely resembles real-world object manipulation and contributes to a more immersive learning experience. Figure~\ref{fig:vr_controller_interaction} illustrates the interaction workflow implemented for VR users.
+
+When a user enters immersive mode, the virtual representations of the handheld controllers are automatically initialized within the three-dimensional environment. The position and orientation of each controller are continuously updated using six degrees of freedom (6DoF) tracking provided by the VR headset. This enables users to naturally point, reach, and interact with virtual objects while moving within the laboratory.
+
+Object interaction is based on a direct manipulation approach. Users can select interactive laboratory components by pointing at them with the VR controller and performing the corresponding interaction action. Once an object has been selected, it can be grabbed, repositioned, and released within the virtual environment. These interactions are used to manipulate experimental equipment such as optical components during physics experiments.
+
+To provide immediate feedback during interaction, visual cues are displayed whenever an interactive object is selected or manipulated. This feedback assists users in identifying objects that can be interacted with and confirms successful execution of interaction events. Such visual responses improve usability while reducing ambiguity during immersive experimentation.
+
+The VR controller interaction system is integrated with the multiplayer synchronization mechanism of the virtual laboratory. When a user manipulates a shared object, the updated object state is transmitted to the server and synchronized with all connected participants. Consequently, every user observes the same object movements and experiment state, enabling collaborative experimentation within the shared virtual environment.
+
+The interaction model was designed to remain extensible for future laboratory experiments. Additional interaction techniques, experimental devices, and educational activities can be incorporated without requiring fundamental changes to the underlying controller framework. The implementation of the VR controller interaction system is available in the accompanying project repository \cite{thesisRepo}.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+node distance=1.5cm,
+box/.style={
+draw,
+rounded corners,
+minimum width=4.2cm,
+minimum height=0.9cm,
+align=center,
+fill=gray!10
+},
+arrow/.style={->,thick}
+]
+
+\node[box] (controller) {VR Controller};
+
+\node[box, below=of controller] (tracking) {6DoF Tracking};
+
+\node[box, below=of tracking] (selection) {Object Selection};
+
+\node[box, below left=1.5cm and 2.2cm of selection] (grab) {Grab / Move};
+
+\node[box, below right=1.5cm and 2.2cm of selection] (release) {Release};
+
+\node[box, below=3cm of selection] (sync) {Object Synchronization};
+
+\node[box, below=of sync] (scene) {Virtual Laboratory};
+
+\draw[arrow] (controller)--(tracking);
+\draw[arrow] (tracking)--(selection);
+\draw[arrow] (selection)--(grab);
+\draw[arrow] (selection)--(release);
+\draw[arrow] (grab)--(sync);
+\draw[arrow] (release)--(sync);
+\draw[arrow] (sync)--(scene);
+
+\end{tikzpicture}
+
+\caption{VR controller interaction workflow within the virtual laboratory.}
+\label{fig:vr_controller_interaction}
+\end{figure}
+
+\section{Browser and VR Device Support}
+
+A fundamental design objective of the proposed virtual laboratory is to provide broad accessibility by supporting both conventional desktop browsers and immersive Virtual Reality (VR) devices. Rather than developing separate applications for desktop and VR platforms, a single browser-based application was implemented using modern web technologies and the WebXR Device API. This unified approach allows users to access the same virtual laboratory regardless of the hardware platform being used. Figure~\ref{fig:browser_vr_support} illustrates the supported access platforms.
+
+Desktop users access the virtual laboratory through a modern web browser using conventional keyboard and mouse controls. This mode provides complete access to the virtual environment, allowing users to explore laboratory spaces, participate in collaborative sessions, and interact with experimental equipment without requiring dedicated VR hardware. Supporting desktop access improves the accessibility of the system, particularly in educational institutions where VR headsets may not be available for every student.
+
+For immersive interaction, the virtual laboratory supports WebXR-compatible Virtual Reality headsets. In this implementation, the Meta Quest 3 headset was used as the primary development and testing platform. When a compatible VR device is detected, users can enter immersive mode directly from the browser without installing additional software. Once the VR session begins, the application automatically switches to stereoscopic rendering and enables interaction using handheld VR controllers.
+
+Both desktop and VR users access the same application, virtual environment, and multiplayer session. The interaction model is adapted according to the available input devices while maintaining identical laboratory content and collaborative functionality. Consequently, users employing different hardware platforms can participate simultaneously within the same virtual laboratory session, observe each other's activities, and interact with shared experimental equipment.
+
+The browser-based deployment model also simplifies software distribution and maintenance. Since the application is hosted on a web server, users always access the latest available version without performing manual software installation or updates. This approach reduces deployment complexity while ensuring consistent functionality across supported devices.
+
+Although the virtual laboratory was primarily developed and evaluated using the Meta Quest 3 headset, the implementation follows the WebXR standard and is therefore expected to operate on other compatible VR devices supporting the WebXR Device API. Similarly, desktop compatibility is achieved through standards-compliant web browsers that support the required web technologies. The implementation supporting browser and VR device compatibility is available in the accompanying project repository \cite{thesisRepo} and utilizes the WebXR capabilities provided by Babylon.js \cite{babylonWebXR}.
+
+\section{Performance Considerations}
+
+Performance is a critical aspect of browser-based Virtual Reality (VR) applications, as smooth rendering and responsive interaction are essential for providing an immersive user experience. During the development of the proposed virtual laboratory, several design decisions were made to improve rendering performance, reduce communication overhead, and maintain responsive interaction across both desktop and VR platforms.
+
+A browser-based architecture was adopted to simplify deployment while utilizing hardware-accelerated rendering through WebGL. Babylon.js provides efficient scene management, rendering optimization, and resource handling, enabling the application to render complex three-dimensional environments within modern web browsers. The use of WebXR further allows immersive rendering without requiring dedicated native applications.
+
+The virtual laboratory environment was designed using a modular scene structure in which static assets, interactive objects, and educational content are organized independently. This modular organization simplifies scene management while reducing unnecessary processing during user interaction. Static environmental assets remain unchanged during execution, whereas only interactive objects and user-controlled entities require continuous updates.
+
+For multiplayer communication, the system exchanges only incremental state updates rather than transmitting the complete virtual scene. User movements, avatar transformations, and interactions with shared laboratory objects are synchronized in real time, while static resources such as models, textures, and environment geometry are loaded locally by each client during initialization. This event-driven synchronization strategy reduces network traffic and improves communication efficiency.
+
+Rendering performance is also improved by separating client-side rendering from server-side synchronization. The client is responsible for graphics rendering, user interaction, and local visual effects, whereas the server maintains the authoritative state of the collaborative environment. This separation distributes computational workload across the system and enables each component to perform specialized tasks independently.
+
+The browser-based deployment model further contributes to maintainability and performance by allowing users to access the latest application version directly from the web server without manual software installation or updates. Since application assets are loaded through standard web technologies, future optimizations such as asset compression, model optimization, and texture streaming can be incorporated without modifying the overall system architecture.
+
+Although the primary objective of this thesis was the implementation of a functional collaborative virtual laboratory rather than extensive performance optimization, the adopted architecture provides a scalable foundation for future improvements. Additional optimization techniques, including model simplification, level-of-detail (LOD) rendering, asset streaming, and advanced network synchronization strategies, can be incorporated as the virtual laboratory evolves.
+
+The implementation of the performance-related design decisions described in this section is available in the accompanying project repository \cite{thesisRepo}.

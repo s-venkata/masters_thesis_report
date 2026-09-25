@@ -1,0 +1,12 @@
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+Virtual Reality (VR) provides new opportunities for physics education by enabling students to interact with experimental concepts in immersive three-dimensional environments. However, many existing VR laboratory systems depend on dedicated native applications, specific hardware platforms, or single-user interaction, which can limit accessibility and collaborative use.
+
+This thesis presents the design, implementation, and evaluation of a browser-based collaborative Virtual Reality laboratory for the simulation and visualization of physics and quantum physics concepts. The system was developed using Babylon.js and the WebXR Device API, enabling the same application to operate on conventional desktop browsers and standalone VR devices such as the Meta Quest~3 without requiring a dedicated native application. A client--server architecture based on Node.js and Colyseus provides real-time multi-user functionality, including avatar representation, shared object interaction, and synchronization of experimental states.
+
+Two representative physics experiments were implemented to demonstrate the capabilities of the platform. The Stern--Gerlach experiment provides an immersive visualization of quantum spin measurement, while the Convex Lens experiment enables users to interactively modify lens position, screen position, and focal length while observing image formation based on the thin-lens equation. Both experiments are integrated into the shared virtual laboratory environment and can be accessed in desktop and immersive VR modes.
+
+The developed system was evaluated through functional testing and a preliminary usability study involving eight participants. The functional evaluation confirmed the operation of the principal system components, while the usability results indicated consistently positive perceptions regarding ease of use, interaction, system responsiveness, and collaborative functionality.
+
+The results demonstrate the feasibility of combining WebXR, browser-based deployment, interactive physics simulations, and real-time multi-user communication within a unified virtual laboratory. The developed platform provides an extensible foundation for future physics experiments, enhanced collaborative learning features, and broader educational deployment.

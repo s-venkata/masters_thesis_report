@@ -1,0 +1,88 @@
+\documentclass[12pt,a4paper]{report}
+
+% Page layout
+\usepackage[
+    top=2cm,
+    bottom=2cm,
+    left=2.5cm,
+    right=2.5cm
+]{geometry}
+
+% Images
+\usepackage{graphicx}
+
+% Chapter and section formatting
+\usepackage{titlesec}
+
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries}
+  {\huge Chapter \thechapter}
+  {10pt}
+  {\Huge}
+
+\titlespacing*{\chapter}
+  {0pt}
+  {0pt}
+  {20pt}
+
+% Table of contents depth
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{2}
+
+% Bibliography
+\usepackage[
+    backend=biber,
+    style=numeric,
+    sorting=none
+]{biblatex}
+\addbibresource{references.bib}
+
+% Hyperlinks
+\usepackage[hidelinks]{hyperref}
+\usepackage{placeins}
+\usepackage{longtable}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta}
+\usepackage{float}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{booktabs}
+
+\begin{document}
+
+\input{firstPage}
+
+\pagenumbering{roman}
+
+\input{affidavit}
+\input{preface}
+\input{abstract}
+\input{contents}
+\input{nomenclature}
+
+\clearpage
+\pagenumbering{arabic}
+
+\include{chapters/01_introduction}
+\include{chapters/02_background}
+\include{chapters/03_requirements}
+\include{chapters/04_architecture}
+\include{chapters/05_environment}
+\include{chapters/06_experiments}
+\include{chapters/07_multiuser}
+\include{chapters/08_evaluation}
+\include{chapters/09_discussion}
+\include{chapters/10_future_work}
+\include{chapters/11_conclusion}
+
+% References
+\clearpage
+\printbibliography[heading=bibintoc,title={References}]
+
+% Appendix
+\clearpage
+\appendix
+\include{appendix}
+
+\end{document}

@@ -1,0 +1,154 @@
+\chapter{Evaluation}
+
+This chapter evaluates the developed browser-based virtual laboratory with respect to the objectives and requirements defined in Chapter~3. Rather than conducting a large-scale educational user study, the evaluation focuses on verifying the technical functionality of the implemented system, including the virtual laboratory environment, browser-based Virtual Reality support, interactive physics experiments, and collaborative multi-user capabilities.
+
+The implemented system was evaluated through functional testing on the target hardware and software platforms. Each major feature of the virtual laboratory was examined to determine whether it satisfies the corresponding functional and non-functional requirements established during the system design phase. Particular attention was given to browser compatibility, WebXR integration, interactive experiment execution, and real-time synchronization between multiple users.
+
+The evaluation presented in this chapter demonstrates the feasibility of implementing an immersive browser-based collaborative virtual laboratory using modern web technologies while identifying the strengths and limitations of the developed system.
+
+\section{Evaluation Methodology}
+
+The objective of the evaluation was to verify that the developed virtual laboratory satisfies the system objectives and requirements defined in Chapter~3. Since the primary contribution of this thesis is the design and implementation of a browser-based collaborative virtual laboratory, the evaluation focuses on validating the functionality, integration, and overall operation of the implemented system rather than conducting a large-scale educational user study.
+
+The evaluation was performed through systematic functional testing of the complete application. Individual software components were tested independently during development before being integrated into the final system. Subsequently, end-to-end testing was carried out to verify that the different modules operated correctly as a unified virtual laboratory.
+
+The evaluation considered five principal aspects of the implementation:
+
+\begin{itemize}
+    \item Correct operation of the browser-based virtual laboratory environment.
+    \item Functionality of the Virtual Reality implementation using WebXR.
+    \item Correct execution of the implemented physics experiments.
+    \item Multi-user collaboration and synchronization between connected users.
+    \item Cross-platform accessibility through desktop browsers and VR devices.
+\end{itemize}
+
+The developed application was evaluated using the primary target hardware described in Chapter~3, namely the Meta Quest~3 headset for immersive Virtual Reality and desktop computers equipped with modern web browsers for conventional interaction. Testing was performed under normal operating conditions to verify that users could successfully navigate the virtual laboratory, interact with experimental equipment, switch between desktop and VR modes, and participate in collaborative laboratory sessions.
+
+Rather than relying solely on individual software modules, the evaluation emphasizes complete user workflows. Representative scenarios included entering the virtual laboratory, navigating between different rooms, interacting with virtual objects, executing the Stern--Gerlach and Convex Lens experiments, adjusting experimental parameters, and observing synchronized interactions between multiple connected participants.
+
+The results presented in the following sections are organized according to the principal functional components of the developed system. Each section discusses the implemented functionality, verifies its successful operation, and relates the observed behaviour to the objectives established during the system design phase. This approach provides a structured assessment of the proposed virtual laboratory while demonstrating that the implemented system fulfills its intended purpose.
+
+\section{Participant Demographics}
+
+A total of eight volunteers participated in the usability evaluation of the proposed browser-based virtual laboratory. The participants represented different levels of prior experience with Virtual Reality (VR) technology and physics laboratory experiments. Both desktop and immersive VR modes were evaluated during the study.
+
+Table~\ref{tab:participants} summarizes the demographic information collected during the evaluation.
+
+\begin{table}[H]
+\centering
+\caption{Participant demographics}
+\label{tab:participants}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{lc}
+\hline
+\textbf{Characteristic} & \textbf{Count} \\
+\hline
+Participants & 8 \\
+Age 20--25 & 3 \\
+Age 26--30 & 5 \\
+Previous VR experience (Yes) & 5 \\
+Previous VR experience (No) & 3 \\
+Previous physics laboratory experience (Yes) & 5 \\
+Previous physics laboratory experience (No) & 3 \\
+Evaluated using VR headset only & 2 \\
+Evaluated using desktop browser only & 5 \\
+Evaluated using both desktop and VR & 1 \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Functional Evaluation}
+
+The functional evaluation verified that the implemented features of the virtual laboratory operated correctly under normal usage conditions. Each participant was asked to perform a series of representative tasks, including entering the virtual laboratory, navigating between rooms, interacting with virtual experiments, and, where applicable, participating in collaborative laboratory sessions.
+
+Table~\ref{tab:functional} summarizes the completion status of the evaluation tasks.
+
+\begin{table}[H]
+\centering
+\caption{Functional evaluation results}
+\label{tab:functional}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{lcc}
+\hline
+\textbf{Task} & \textbf{Completed} & \textbf{Percentage} \\
+\hline
+Visited virtual laboratory & 8/8 & 100\% \\
+Navigated between rooms & 6/8 & 75\% \\
+Completed Convex Lens experiment & 5/8 & 62.5\% \\
+Observed Stern--Gerlach experiment & 8/8 & 100\% \\
+Participated in multi-user session & 5/8 & 62.5\% \\
+\hline
+\end{tabular}
+\end{table}
+
+The results demonstrate that all participants successfully accessed the virtual laboratory and observed the implemented physics experiments. A smaller number of participants completed the Convex Lens experiment and collaborative session because several participants evaluated only the desktop version of the application or performed a shortened demonstration during testing.
+
+\section{Usability Evaluation}
+
+Participants evaluated the virtual laboratory using five usability statements measured on a five-point Likert scale ranging from Strongly Disagree to Strongly Agree.
+
+Table~\ref{tab:usability} summarizes the responses.
+
+\begin{table}[H]
+\centering
+\caption{Summary of usability responses}
+\label{tab:usability}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{p{9cm}cc}
+\hline
+\textbf{Question} & \textbf{Agree} & \textbf{Strongly Agree} \\
+\hline
+The virtual laboratory was easy to use. & 5 & 3 \\
+The experiments were easy to understand and interact with. & 6 & 2 \\
+The browser-based VR experience performed smoothly. & 5 & 3 \\
+The virtual laboratory is an effective learning environment. & 5 & 3 \\
+It was easy to collaborate with other users. & 4 & 4 \\
+\hline
+\end{tabular}
+\end{table}
+
+Overall, participants reported highly positive impressions of the developed virtual laboratory. None of the participants selected Neutral, Disagree, or Strongly Disagree for any of the usability statements. The highest ratings were obtained for the overall ease of use, collaborative functionality, and the immersive learning experience provided by the virtual laboratory.
+
+Participants also provided qualitative feedback regarding the developed system. Positive comments highlighted the intuitive interaction mechanisms, the immersive Virtual Reality experience, and the collaborative nature of the virtual laboratory.
+
+Several representative comments included:
+
+\begin{itemize}
+\item ``Interaction at its best and conceptual understanding is outstanding through VR.''
+\item ``Easy to use and multiple trials are available.''
+\item ``I liked how intuitive it was and how straightforward the interaction was.''
+\end{itemize}
+
+Participants also suggested several possible improvements for future versions of the virtual laboratory, including:
+
+\begin{itemize}
+\item Addition of more physics experiments.
+\item Display of measured values during experiments.
+\item Expansion of collaborative laboratory activities.
+\end{itemize}
+
+The evaluation demonstrates that the proposed browser-based virtual laboratory successfully satisfies its primary objectives of accessibility, usability, immersive interaction, and collaborative learning. Participants reported that the system was easy to use and that the implemented experiments effectively supported conceptual understanding. The positive feedback regarding Virtual Reality interaction and collaborative functionality indicates that the proposed architecture provides an engaging learning environment while remaining accessible through standard web technologies.
+
+Although the evaluation involved only eight participants and was intended as a preliminary usability study, the results provide encouraging evidence regarding the feasibility of browser-based collaborative Virtual Reality laboratories for physics education. Future work should include larger-scale classroom evaluations involving students and instructors to investigate learning outcomes and long-term educational effectiveness.
+
+
+\section{Discussion}
+
+The evaluation demonstrates that the proposed browser-based virtual laboratory successfully fulfills the primary objectives established during the system design phase. Functional testing confirmed that the implemented features, including browser-based access, immersive Virtual Reality support, interactive physics experiments, and collaborative multi-user functionality, operated reliably throughout the evaluation.
+
+The usability evaluation further supports these findings. Participants consistently reported that the virtual laboratory was easy to use, that the interaction mechanisms were intuitive, and that the implemented physics experiments effectively facilitated conceptual understanding. In particular, the immersive Virtual Reality experience and the collaborative multi-user functionality received highly positive feedback, indicating that the proposed system provides an engaging environment for learning physics concepts.
+
+Qualitative feedback also identified several opportunities for future improvement. Participants suggested incorporating additional physics experiments, displaying numerical measurement values during experiments, and expanding the collaborative learning features. These suggestions demonstrate that users found the current implementation useful while recognizing its potential for further development.
+
+Although the evaluation involved only eight participants, the results provide encouraging evidence regarding the feasibility of browser-based collaborative Virtual Reality laboratories for physics education. The evaluation was intended as a preliminary usability study rather than a comprehensive educational assessment. Consequently, larger-scale studies involving students and instructors should be conducted in future work to investigate learning outcomes, long-term usability, and the educational effectiveness of collaborative virtual laboratories in classroom environments.
+
+Overall, the evaluation indicates that the developed system provides an accessible, intuitive, and technically reliable platform for immersive physics education while establishing a flexible foundation for future research and development.
+
+
+\section{Summary}
+
+This chapter presented the evaluation of the proposed browser-based virtual laboratory through both functional testing and a usability study involving eight volunteer participants. The functional evaluation confirmed that the implemented system successfully satisfied the principal design objectives, including browser accessibility, WebXR integration, interactive physics experiments, and collaborative multi-user functionality.
+
+The usability evaluation demonstrated consistently positive feedback regarding ease of use, interaction quality, Virtual Reality immersion, and collaborative learning. Participants particularly appreciated the intuitive interaction mechanisms and the ability to explore physics concepts within an immersive virtual environment. The suggestions collected during the evaluation also provide valuable guidance for future improvements, including the addition of further experiments and enhanced educational features.
+
+Overall, the evaluation confirms that the developed virtual laboratory represents a practical and effective browser-based platform for collaborative physics education and successfully demonstrates the feasibility of integrating modern web technologies, immersive Virtual Reality, and real-time multi-user interaction within a single educational environment.

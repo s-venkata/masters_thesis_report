@@ -1,0 +1,301 @@
+\chapter{Background and Related Work}
+
+\section{Virtual Reality in Education}
+
+Virtual Reality (VR) is being used more often in education because it can create interactive and immersive learning environments. In contrast to standard digital platforms that display information on flat screens, VR systems allow users to interact with three-dimensional virtual spaces using natural movements. This makes it possible for students to explore concepts, manipulate virtual objects, and experience scenarios that are difficult, unsafe, or costly to reproduce in a typical classroom setting.
+
+The use of VR in education is based on experiential and constructivist learning principles, where students learn by actively participating instead of only observing. VR systems allow students to perform tasks directly, which can help with understanding concepts and keeping learners engaged. Studies have reported that immersive VR can lead to better outcomes than traditional methods, especially for learning procedures and practical skills, and can also increase motivation \cite{conrad2024learning}.
+
+A main advantage of VR is that it provides safe and repeatable learning experiences. Students can perform experiments, operate equipment, or practice procedures multiple times without the risks found in real laboratories. This is useful in fields like engineering, medicine, chemistry, and physics, where equipment can be expensive, hazardous, or not always available. VR also makes it possible to create scenarios that are not practical or possible in real life, such as microscopic views, astronomical simulations, or dangerous industrial situations.
+
+VR environments can also increase learner engagement by encouraging direct interaction with educational content. Features such as manipulating virtual objects, receiving immediate visual feedback, and developing spatial understanding can help with knowledge retention and motivation. Reviews of the literature have found positive effects of VR on skill development, understanding of concepts, and learner satisfaction in science and engineering \cite{yang2024impact, tusher2024vrskills}.
+
+However, there are still several challenges with using VR in education. Hardware costs are high, educational content is limited, and some users experience motion sickness. Developing immersive applications also requires technical expertise. Many VR learning systems are standalone and designed for single users, which makes collaborative learning and deployment more difficult. For this reason, research has focused on browser-based VR technologies that do not require installation and can support collaborative and cross-platform environments \cite{sakr2024vrreview}.
+
+Recent advances in standalone head-mounted displays, cloud technologies, and open web standards have helped reduce some of these barriers. Browser-based frameworks and WebXR now make it possible to run immersive educational applications directly in modern web browsers without installing extra software. This development allows for more scalable, accessible, and collaborative virtual learning environments that can be used in both classroom and remote settings.
+
+
+
+\section{Virtual Laboratories and Remote Laboratories}
+
+Laboratory-based learning is a key part of science and engineering education because it gives students the opportunity to apply theory through practical experiments. In traditional laboratories, students work directly with physical equipment, which helps them develop technical skills and observe real-world effects. However, there are several limitations with conventional laboratories. Equipment is often expensive, access is restricted to scheduled sessions, and there are ongoing maintenance and safety requirements. These issues have led to the development of digital laboratory environments, which aim to improve accessibility while still supporting effective learning \cite{ma2011virtual}.
+
+Digital laboratory environments are usually divided into two main types: virtual laboratories and remote laboratories. Both approaches use information technology to support practical learning, but they differ in how they work and what educational goals they address.
+
+A virtual laboratory is a software-based simulation where experiments are carried out using virtual models instead of real equipment. The laboratory setup, instruments, and procedures are all simulated, so students interact with digital versions of real systems. Virtual laboratories allow experiments to be repeated as often as needed without equipment wear, safety risks, or using up materials. Because everything is simulated, it is possible to change parameters easily and test scenarios that would be difficult, unsafe, or too expensive in a physical lab. For this reason, virtual laboratories are often used to support conceptual understanding and exploratory learning \cite{potkonjak2016virtual}.
+
+Remote laboratories give students access to real laboratory equipment over the Internet. In this setup, students control actual instruments, sensors, and experiments located in a physical lab, rather than working with simulations. Cameras and measurement systems provide real-time feedback, so users can see the results of their actions even if they are not in the same location. Remote laboratories help make better use of equipment and allow institutions to share expensive setups with more users. However, they still depend on the physical hardware being available and maintained, and the number of users at one time is limited by how many setups are available \cite{heradio2016virtual}.
+
+Both virtual and remote laboratories support distance education, but each has different advantages. Virtual laboratories focus on flexibility, scalability, and the ability to experiment without physical limits. Remote laboratories provide more realistic experiences by giving access to real equipment. Table~\ref{tab:virtual_remote_comparison} lists the main differences between these two types of digital laboratories.
+
+\begin{center}
+\small
+\begin{longtable}{p{4cm}p{5cm}p{5cm}}
+\caption{Comparison between virtual laboratories and remote laboratories}\label{tab:virtual_remote_comparison}\\
+\hline
+\textbf{Characteristic} & \textbf{Virtual Laboratory} & \textbf{Remote Laboratory} \\
+\hline
+\endfirsthead
+
+\multicolumn{3}{l}{\small \tablename\ \thetable\ -- continued from previous page}\\
+\hline
+\textbf{Characteristic} & \textbf{Virtual Laboratory} & \textbf{Remote Laboratory} \\
+\hline
+\endhead
+
+\hline
+\multicolumn{3}{r}{\small Continued on next page}\\
+\endfoot
+
+\hline
+\endlastfoot
+
+Laboratory equipment & Simulated & Real physical equipment \\
+Experiment execution & Software simulation & Internet-based remote control \\
+Accessibility & Unlimited & Limited by equipment availability \\
+Safety & Completely safe & Depends on physical system \\
+Operating cost & Low after development & Continuous maintenance required \\
+Scalability & High & Limited by hardware resources \\
+Repeatability & Unlimited & Subject to equipment scheduling \\
+Educational focus & Conceptual understanding and exploration & Practical operation of real equipment \\
+\end{longtable}
+\end{center}
+
+Several studies have found that virtual laboratories can be used to supplement traditional laboratory instruction, especially in introductory science and engineering courses. Virtual laboratories offer features such as repeated practice, immediate feedback, and visualization of concepts that are otherwise difficult to demonstrate. However, most researchers agree that virtual laboratories are best used as a complement to physical laboratories rather than as a complete replacement. They provide additional learning opportunities outside the classroom \cite{potkonjak2016virtual, heradio2016virtual}.
+
+Recent developments in immersive Virtual Reality (VR) have made it possible to build virtual laboratories where users interact with three-dimensional environments using hand movements and spatial controls, rather than standard desktop interfaces. These VR laboratories aim to provide a more realistic experience while keeping the flexibility and safety of software-based simulations. In addition, current web technologies allow virtual laboratories to run in web browsers, which removes the need for software installation and makes it easier to support collaborative work on different devices.
+
+The system developed in this thesis is an immersive virtual laboratory. In this setup, users carry out experiments inside a simulated virtual environment that was implemented using WebXR and Babylon.js. The system allows students to perform physics experiments together through standard web browsers. This approach provides immersive interaction and cross-platform access, and it allows experiments to be repeated without the constraints of physical laboratory equipment.
+
+
+
+\section{Web-Based Virtual Reality}
+
+Web-based Virtual Reality provides immersive content through the web browser rather than through a separately installed native application. Modern browser APIs make it possible to render interactive three-dimensional environments and, on supported devices, enter an immersive VR session directly from a web application. The WebXR Device API provides the interface between web applications and XR hardware, while technologies such as WebGL provide browser-based graphics rendering \cite{steed2020webxr}.
+
+This delivery model is particularly relevant to virtual laboratories because the same application can provide different forms of access depending on the available hardware. A student using a conventional computer can interact with the laboratory through a desktop browser, while a user with a compatible headset can enter the immersive version through the headset browser. The application logic and experimental environment therefore do not need to be maintained as separate desktop and VR applications.
+
+Web-based delivery also changes how a virtual laboratory is deployed. Application code and assets can be hosted on a server and accessed through a URL, allowing updates to be made centrally rather than distributed as new application installations. At the same time, browser-based VR remains dependent on browser capabilities, device support, graphics performance, and the computational complexity of the virtual environment. These constraints are particularly relevant for standalone headsets, where rendering resources are more limited than on desktop computers \cite{monteiro2024immersive}.
+
+Web technologies can also support networked virtual environments. A browser client can exchange application state with a server, allowing multiple users to occupy the same virtual environment and receive updates about other participants and shared objects. However, WebXR itself does not provide multi-user synchronization; this functionality has to be implemented separately through an appropriate networking architecture.
+
+These characteristics motivated the use of a web-based approach in this thesis. The developed laboratory uses Babylon.js for the three-dimensional environment and WebXR integration, while a Node.js and Colyseus server manages the shared multi-user state. The resulting application can be accessed from desktop browsers and from the Meta Quest~3, with immersive VR enabled on supported hardware. The platform is also distributed as an open-source, self-hostable system, allowing the laboratory and its multiplayer server to be deployed independently.
+
+
+\section{Multi-User Virtual Environments}
+
+A Multi-User Virtual Environment  allows several users to be present in the same virtual space and interact with a common environment. In contrast to a single-user simulation, the state of the environment is shared between connected participants. Users can therefore observe other participants and, depending on the application, interact with the same virtual objects \cite{dalgarno2010learning}. This makes the concept relevant to virtual laboratories, where experiments are traditionally carried out not only individually but also collaboratively.
+
+For a virtual laboratory, simply displaying several users in the same scene is not sufficient for meaningful collaboration. Changes to experimental equipment must also be communicated between participants. For example, when one user moves an experimental component, the resulting position should be visible to the other connected users. The application therefore has to maintain a consistent representation of relevant experiment states across the participating clients. This introduces technical questions concerning synchronization, network latency, object ownership, and simultaneous interaction.
+
+Avatars provide another important part of the shared environment. They indicate the presence and position of other participants and allow users to identify who is currently present in the laboratory. Previous research on collaborative virtual environments has associated such representations with social presence and collaborative interaction \cite{radianti2020review}. However, avatar representation alone does not provide collaboration at the experiment level; the state of shared experimental objects must also be synchronized.
+
+These requirements are particularly relevant in a browser-based system. WebXR provides access to immersive XR functionality, but it does not define how multiple users share application state. A separate networking layer is therefore required to exchange user and experiment information between connected browser clients.
+
+In the system developed in this thesis, this functionality is implemented using a client--server architecture based on Colyseus. Participants joining the same laboratory session are represented by avatars, while selected experimental objects and experiment states are synchronized through the server. This allows a user on a desktop browser and a user on a VR headset, for example, to participate in the same laboratory session and observe changes to the shared experiment environment. The detailed networking architecture and synchronization mechanisms are presented in Chapters~4 and~7.
+
+\section{Physics Education in Virtual Reality}
+
+Physics education often involves abstract concepts and phenomena that are difficult for students to visualize using traditional teaching methods alone. Topics such as optics, electromagnetism, mechanics, and wave propagation require learners to understand relationships between mathematical models and physical behavior. Laboratory experiments play a crucial role in bridging this gap by allowing students to observe physical phenomena and verify theoretical principles through practical investigation. However, access to laboratory equipment is frequently limited by cost, space, safety considerations, and scheduling constraints, motivating the adoption of immersive Virtual Reality (VR) as an alternative learning platform \cite{radianti2020review}.
+
+Virtual Reality provides an immersive environment in which students can perform experiments by directly interacting with virtual instruments and observing simulated physical phenomena. Unlike conventional desktop simulations, immersive VR allows learners to manipulate experimental components using natural spatial interactions, resulting in a stronger sense of presence and engagement. This experiential approach has been shown to improve conceptual understanding, learner motivation, and practical skill development across various science and engineering disciplines \cite{makransky2019adding}.
+
+A wide range of physics topics has been explored using VR-based educational environments. In mechanics, students can investigate motion, forces, momentum, and collisions within interactive three-dimensional simulations. Electromagnetism experiments enable learners to visualize electric and magnetic fields that are otherwise invisible in physical laboratories. Astronomy and quantum physics applications allow users to explore scales and phenomena that cannot be directly experienced in reality. These immersive visualizations help students connect mathematical equations with observable physical behavior, supporting deeper conceptual understanding.
+
+Optics has emerged as one of the most suitable domains for VR-based learning because many optical phenomena are inherently visual and spatial. Virtual environments allow students to manipulate lenses, mirrors, light sources, and screens while observing changes in image formation, focal length, magnification, and ray propagation in real time. Unlike physical laboratories, where repeated adjustments may be time-consuming or constrained by available equipment, virtual environments allow unlimited experimentation with immediate visual feedback. This flexibility encourages exploratory learning and enables students to investigate "what-if" scenarios without the risk of damaging laboratory equipment.
+
+Several commercial and academic virtual laboratory platforms have demonstrated the educational potential of immersive physics experiments. Systems such as Labster provide interactive virtual science laboratories covering multiple STEM disciplines, while numerous research prototypes have implemented VR-based experiments for mechanics, optics, and electricity. Although these systems demonstrate the effectiveness of immersive learning, many are either commercial products with limited accessibility, require native software installation, or primarily support individual learning rather than collaborative experimentation \cite{labster, radianti2020review}.
+
+Recent developments in browser technologies and immersive web standards have created new opportunities for delivering physics laboratories through standard web browsers. Browser-based VR applications reduce deployment complexity by eliminating software installation while enabling cross-platform compatibility across desktop computers and standalone VR headsets. Furthermore, integrating collaborative multi-user capabilities allows students and instructors to perform experiments together within the same virtual environment, closely resembling teamwork in traditional laboratory sessions.
+
+The virtual laboratory developed in this thesis builds upon these advances by providing browser-based immersive physics experiments focused on optical principles. Students can collaboratively perform experiments involving thin lenses and image formation within a shared virtual environment accessible through WebXR-compatible devices. By combining immersive interaction, web-based deployment, and real-time collaboration, the proposed system aims to improve the accessibility and effectiveness of practical physics education while reducing the dependence on physical laboratory infrastructure.
+
+\section{Existing Approaches and Research Gap}
+\label{sec:existing_approaches}
+
+Several existing systems demonstrate the potential of Virtual Reality (VR)
+and web-based technologies for science education. However, these approaches
+differ considerably in terms of accessibility, deployment model, support for
+multi-user collaboration, and the implementation of interactive physics
+experiments. The following works represent approaches that are particularly
+relevant to the system developed in this thesis.
+
+\subsubsection*{PhyLab}
+
+Korlat et al. developed PhyLab, a game-based virtual reality application for
+secondary-school physics education \cite{korlat2024phylab}. The application
+contains ten teaching units covering topics including electricity,
+electromagnetism, forces, energy, temperature, and radioactivity. Each unit
+combines an interactive physics experiment with additional learning content
+and quiz elements. PhyLab was implemented using the Unity 3D engine and the
+Google VR SDK and was deployed as an Android application used with Google
+Cardboard. The study therefore demonstrates the use of immersive VR for
+interactive physics education on comparatively accessible hardware. However,
+the reported implementation is a native mobile application rather than a
+browser-based WebXR system, and the paper does not document real-time
+multi-user collaboration or synchronization of experiment states.
+
+\subsubsection*{MolecularWebXR}
+
+MolecularWebXR is a browser-based multi-user platform for immersive scientific
+visualization and education, with applications in chemistry, structural
+biology, and related molecular sciences \cite{cortes2025molecularwebxr}.
+The system is built on WebXR and can be accessed directly through compatible
+web browsers without requiring a dedicated application. It supports immersive
+VR headsets as well as conventional devices, allowing users to navigate the
+environment using either VR interaction or desktop controls. Multiple users
+can participate in the same virtual environment, where avatar information and
+transformations of shared scientific objects are synchronized between
+participants. The platform therefore demonstrates that browser-based WebXR can
+support real-time collaborative interaction with scientific content. Its
+application focus, however, is molecular visualization and manipulation rather
+than the implementation of interactive physics laboratory experiments.
+
+\subsubsection*{openphys.in}
+
+Halder and Banerjee developed openphys.in, a browser-based platform for
+undergraduate physics laboratory experiments \cite{halder2026openphys}.
+The platform includes experiments from general physics and optics, including
+Young's modulus, viscosity, Newton's rings, Fresnel's biprism, and diffraction
+grating experiments. It is implemented using HTML, CSS, and JavaScript and
+executes entirely on the client side, allowing the experiments to be accessed
+through a conventional web browser without requiring additional software.
+The platform therefore demonstrates the accessibility of browser-based
+interactive physics laboratories across conventional computing devices.
+However, the reported system uses a two-dimensional browser interface rather
+than an immersive WebXR environment, and real-time multi-user collaboration
+or synchronization of experiment states is not described.
+
+\subsubsection*{Virtual Optical Bench}
+
+Bellgardt et al. presented the Virtual Optical Bench, an immersive VR
+application for teaching and exploring spherical lens systems
+\cite{bellgardt2023virtualopticalbench}. The system allows users to arrange
+optical components and observe the resulting light paths through real-time
+ray tracing, providing an interactive environment for investigating optical
+design concepts. The application was implemented using Unreal Engine 4 and
+targets PC-based VR hardware through SteamVR. The project therefore provides
+a particularly relevant example of using immersive VR for interactive optics
+education. In contrast to browser-based approaches, however, the reported
+system requires a locally installed application and dedicated PC-based VR
+hardware. Real-time multi-user collaboration is not documented in the
+reported implementation.
+
+% To be added after source verification.
+
+\subsubsection*{Prior Work at Hochschule Offenburg}
+
+Previous work at Hochschule Offenburg has investigated the use of immersive
+Virtual Reality for teaching physics, optics, and photonics. Gampe et al.
+introduced VR-based experimental environments for selected topics in optics
+and photonics using the Unity engine \cite{gampe2021vr}. This work was further
+developed by Vauderwange et al., who explored the implementation of interactive
+laboratory experiments in virtual environments as part of optics and photonics
+education \cite{vauderwange2022vr}. Subsequent work considered the broader use
+of immersive technologies in learning environments and their role in
+supporting experimental and visual forms of science education
+\cite{gampe2023immersive}.
+
+More recently, Softic et al. presented an immersive VR implementation of the
+double-slit experiment as a case study for interactive physics education
+\cite{softic2025doubleslit}. The experiment was implemented using Unity and
+deployed on a Pico 4 VR headset, demonstrating the use of immersive
+visualization for a quantum-physics experiment. Together, these works establish
+a continuing line of research on immersive VR-based physics and optics
+education at Hochschule Offenburg. The reported implementations primarily use
+native VR applications, while browser-based WebXR delivery and real-time
+multi-user synchronization of experiment states are not documented in these
+works.
+
+% To be added after source verification.
+
+
+% ---------------------------------------------------------
+% Comparison of Related Systems
+% ---------------------------------------------------------
+\begin{table}[htbp]
+    \centering
+    \caption{Comparison of related virtual and web-based laboratory systems.}
+    \label{tab:related_systems}
+
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{lccccccc}
+        \hline
+
+        \textbf{System} &
+        \shortstack{\textbf{Physics}\\\textbf{Experiments}} &
+        \shortstack{\textbf{Browser}\\\textbf{Based}} &
+        \shortstack{\textbf{Immersive}\\\textbf{XR}} &
+        \shortstack{\textbf{Desktop}\\\textbf{Access}} &
+        \textbf{Multi-User} &
+        \shortstack{\textbf{Shared}\\\textbf{State}} &
+        \shortstack{\textbf{Open}\\\textbf{Source}} \\
+
+        \hline
+
+        PhyLab
+        & Yes
+        & No
+        & Yes (Cardboard)
+        & Not documented
+        & Not documented
+        & Not documented
+        & Partial \\
+
+        MolecularWebXR
+        & No
+        & Yes
+        & Yes
+        & Yes
+        & Yes
+        & Yes
+        & Not identified \\
+
+        openphys.in
+        & Yes
+        & Yes
+        & No
+        & Yes
+        & Not documented
+        & Not documented
+        & Yes \\
+
+        Virtual Optical Bench
+        & Yes
+        & No
+        & Yes (SteamVR)
+        & No
+        & Not documented
+        & Not documented
+        & Yes \\
+
+        Previous Offenburg Work
+        & Yes
+        & No
+        & Yes
+        & Not documented
+        & Not documented
+        & Not documented
+        & Not documented \\
+
+        \textbf{System developed in this thesis}
+        & Yes
+        & Yes
+        & Yes
+        & Yes
+        & Yes
+        & Yes
+        & Yes \\
+
+        \hline
+    \end{tabular}%
+    }
+
+\end{table}
+
+% ---------------------------------------------------------
+% Research Gap
+% ---------------------------------------------------------
+
+% Research-gap discussion will be added after the individual
+% systems and comparison criteria have been verified.

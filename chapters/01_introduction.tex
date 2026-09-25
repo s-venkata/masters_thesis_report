@@ -1,0 +1,55 @@
+
+\chapter{Introduction}
+
+\section{Motivation}
+Laboratory experiments are an important part of physics education because they help students connect theoretical concepts with practical observations. Through experiments, students can interact with physical systems, observe relationships between different parameters, and develop a better understanding of concepts. However, access to physical laboratory environments can be limited by factors such as the availability of equipment, laboratory space, supervision, cost, and scheduling constraints.
+
+Virtual laboratories provide an alternative and complementary way of performing experimental activities. Instead of relying entirely on physical equipment, experiments can be represented in an interactive digital environment where users can manipulate objects, modify experimental parameters, and observe the resulting behaviour. Research on immersive Virtual Reality (VR) in education has shown that such environments can support the visualization of complex scientific phenomena and provide interactive learning experiences that are difficult to reproduce using conventional teaching methods \cite{hamilton2020immersive,georgiou2021learning}.
+
+ Virtual environments can represent these phenomena in three dimensions and allow users to interact with them from different perspectives. Studies on VR-supported physics education have therefore investigated virtual laboratories as a means of supporting conceptual understanding and experimental learning \cite{lakka2023online}. At the same time, the existing literature does not establish VR as a general replacement for physical laboratories. Instead, its value depends strongly on the design of the learning environment and the type of experiment being performed \cite{hamilton2020immersive}.
+
+The development of web-based immersive technologies further increases the potential accessibility of virtual laboratories. WebXR allows immersive VR applications to run directly through compatible web browsers, reducing the dependency on separately installed applications and platform-specific software. Previous research has demonstrated the use of web-based XR environments for physics and engineering education, showing that interactive experiments can be carried out using standard web technologies \cite{zatarain2022experiences}. This approach also enables the same application to support different types of devices, ranging from conventional desktop browsers to standalone VR headsets.
+
+Another important aspect of laboratory-based learning is collaboration. In a physical laboratory, students often perform experiments together, discuss observations, and receive guidance from instructors. Multi-user virtual environments can reproduce part of this collaborative aspect by allowing several users to enter the same virtual space and interact with shared content. WebXR-based systems have already demonstrated the feasibility of collaborative immersive environments in educational and scientific contexts \cite{cortes2024molecularwebxr}.These developments provide the motivation for the present work. 
+
+
+\section{Problem Statement}
+
+Although Virtual Reality has shown potential for science and physics education, but there are still several practical and technical challenges that limit its wider use in laboratory-based learning. Most existing virtual laboratory applications are built for specific devices, platforms, or software environments. This platform dependence reduces accessibility and often requires users to install dedicated software or set up specific hardware before they can use the learning environment. Web-based extended reality was considered as an alternative because it allows immersive learning environments to be accessed directly through compatible web browsers \cite{zatarain2022experiences}.
+
+Another challenge is that a virtual laboratory needs to offer more than just a visual model of an experiment. In physics education, students are expected to manipulate experimental components, change parameters, take measurements, and observe how the system responds. Previous studies have shown that VR laboratories can support these experimental procedures, including data collection, analysis, and interpretation. This suggests that meaningful interaction is a necessary part of virtual laboratory design \cite{lakka2023online}.
+
+Collaboration is another practical challenge. In traditional laboratory activities, multiple students usually work together, discuss observations, and interact with shared experimental equipment. Research on collaborative immersive learning shows that VR environments can provide shared spaces for group activities. However, current systems still have problems with usability, social interaction, and designing effective collaborative experiences \cite{paulsen2024collaborative}.
+
+The main problem addressed in this thesis is the development of an open-source, accessible, interactive, and collaborative virtual laboratory for physics and quantum experiments. The system was designed to let users access the same virtual environment using either a standard web browser or a compatible VR headset. Users should be able to interact with simulated experimental setups and visualize phenomena. The application also needs to provide enough performance and synchronization to support real-time interaction on standalone VR hardware.
+
+
+
+\section{Objectives and Task Description}
+
+The main objective of this thesis was to design and implement a browser-based virtual laboratory for interactive simulation and visualization of selected physics and quantum physics concepts in a immersive environment. The system was developed to be accessible and interactive, with support for both standard desktop browsers and standalone Virtual Reality headsets.
+
+To achieve this, a WebXR-based application was developed where users can enter a shared virtual environment, move between different laboratory spaces, and interact with virtual experimental setups. The system allows direct manipulation of experiment components, adjustment of selected physical parameters, and real-time visualization of the resulting behavior.
+
+Another objective was to support experiments that demonstrate both classical and quantum physics concepts. For this purpose, two experiments were implemented: an interactive convex lens setup based on the thin-lens equation, and a Stern-Gerlach experiment for visualizing quantum spin measurement. These experiments were used to examine how physical relationships and phenomena that are difficult to observe directly can be represented interactively in a virtual environment.
+
+A key task was to implement multi-user functionality. The system was developed so that multiple participants can join the same virtual laboratory, observe each other in the environment, and interact with shared content. This required synchronization of user positions, orientations, and relevant experiment states across all connected clients. Collaborative features were included because shared activities and social interaction are important in immersive learning environments when designed appropriately \cite{paulsen2024collaborative}.
+
+Cross-device accessibility was also investigated. The application was developed to be usable both through a standard web browser and a compatible VR headset. This approach was chosen because web-based XR technologies can reduce platform dependence and allow immersive learning environments to be accessed using standard web technologies \cite{zatarain2022experiences}.
+
+Based on these objectives, the main tasks of the thesis can be summarized as follows:
+
+\begin{itemize}
+    \item Design a browser-based three-dimensional virtual laboratory environment;
+    \item Integrate immersive Virtual Reality support using WebXR;
+    \item Implement interactive simulations of selected physics and quantum physics experiments;
+    \item Provide user interaction for manipulating experimental components and parameters;
+    \item Implement multi-user communication and synchronization within the shared virtual environment;
+    \item Support access from both conventional browsers and standalone VR devices;
+    \item Test the functionality, interaction behaviour, synchronization, and performance of the developed system.
+\end{itemize}
+
+The overall goal is not to replace conventional laboratory teaching, but to investigate how browser-based immersive technologies can complement existing learning environments by providing interactive visualization, remote accessibility, and shared participation in virtual experiments.
+
+
+
